@@ -1,16 +1,14 @@
 // Write your Character component here
 import React from 'react'
 import styled from 'styled-components'
+import Details from './Details'
 
 const StyledCharacter = styled.div`
     width: 70%;
     text-align: left;
-    /* display: flex;
-    justify-content: left;
-    align-items: center; */
     background-color: rgba(0,0,0,0.5);
     padding: 2%;
-    margin: 4%;
+    margin: 2%;
     box-shadow: 0px 0px 25px purple;
 
     h2 {
@@ -21,11 +19,11 @@ const StyledCharacter = styled.div`
 `
 
 export default function Character({ character }) {
+    
     return (
         <StyledCharacter>
-        {/* <div> */}
             <h2>{character.name}</h2>
-        {/* </div> */}
+            <Details character={character}/>
         </StyledCharacter>
     );
 };
