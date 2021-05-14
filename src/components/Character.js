@@ -4,16 +4,22 @@ import styled from 'styled-components'
 import Details from './Details'
 
 const StyledCharacter = styled.div`
-    width: 70%;
-    text-align: left;
+    width: 50%;
+    text-align: center;
     background-color: rgba(0,0,0,0.5);
-    padding: 2%;
+    padding: 1%;
     margin: 2%;
-    box-shadow: 0px 0px 25px purple;
+    box-shadow: 0px 0px 25px indigo;
+
+    transition: all 0.5s ease-in-out;
+    &:hover {
+        transition: all 0.5s ease-in-out;
+        background-color: rgba(0,0,0,0.75);
+    }
 
     h2 {
-        font-size: 28px;
-        color: darkred;
+        font-size: 35px;
+        color: goldenrod;
         text-shadow: 0px 0px 15px lightgray;
     }
 `
@@ -23,7 +29,9 @@ export default function Character({ character }) {
     return (
         <StyledCharacter>
             <h2>{character.name}</h2>
-            <Details character={character}/>
+            <div>
+                <Details character={character}/>
+            </div>
         </StyledCharacter>
     );
 };
