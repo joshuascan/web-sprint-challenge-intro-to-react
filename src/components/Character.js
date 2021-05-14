@@ -9,12 +9,13 @@ const StyledCharacter = styled.div`
     background-color: rgba(0,0,0,0.5);
     padding: 1%;
     margin: 2%;
-    box-shadow: 0px 0px 25px indigo;
+    
 
     transition: all 0.5s ease-in-out;
     &:hover {
         transition: all 0.5s ease-in-out;
         background-color: rgba(0,0,0,0.75);
+        box-shadow: ${props => props.shadow ? '0px 0px 25px indigo' : '0px 0px 25px crimson'};
     }
 
     h2 {
@@ -24,10 +25,10 @@ const StyledCharacter = styled.div`
     }
 `
 
-export default function Character({ character }) {
+export default function Character({ character, shadow }) {
     
     return (
-        <StyledCharacter>
+        <StyledCharacter shadow={shadow}>
             <h2>{character.name}</h2>
             <div>
                 <Details character={character}/>

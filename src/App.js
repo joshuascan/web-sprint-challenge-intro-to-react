@@ -29,7 +29,7 @@ const App = () => {
     <div className="App">
       <h1 className="Header">Characters</h1>
       {characters.map((character, i) => {
-          return <Character key={i} character={character}/>;
+          return <Character key={i} shadow={i % 2 === 0} character={character}/>;
       })}
     </div>
   );
